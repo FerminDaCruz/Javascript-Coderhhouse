@@ -1,0 +1,21 @@
+html{
+    font-size: 62.5%; /* 1 REM = 10PX */
+    box-sizing: border-box; /* paul irish borderbox */
+}
+
+*, *:before, *:after { /* paul irish borderbox */
+    box-sizing: inherit;
+}
+
+body{
+    font-size: 16px; /* 1 REM = 10PX */
+}
+
+
+
+// Globales
+
+a { /* Para sacar el subrayado de los enlaces*/
+    text-decoration: none;
+    color: inherit;
+}
