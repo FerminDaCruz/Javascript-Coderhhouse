@@ -13,7 +13,7 @@
 
 
 .hero {
-    background-image: url(/assets/images/hero-2.jpg);
+    background-image: url(/assets/images/hero-3.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     width: auto;
@@ -30,5 +30,31 @@
             font-family: "montserrat";
         }
     }
-    
 }
+
+.reasons {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    .reasons__title {
+        font-family: "Lato";
+        text-align: center;
+        padding-bottom: 5rem;
+        font-size: 3rem;
+
+    }
+    .reasons__articles {
+        font-family: "Lato";
+        display: flex;
+        padding-left: 10rem;
+        padding-right: 10rem;
+        .reasons__article{
+            padding-left: 5rem;
+            padding-right: 5rem;
+            text-align: center;
+            h3{
+                font-size: 2rem;
+            }
+        }
+    }
+}
+// Roboto, Montserrat, Open Sans, Lato
