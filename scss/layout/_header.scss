@@ -10,19 +10,32 @@
         height: 7rem;
         width: auto;
         margin: 2rem;
+        transition: filter 0.2s ease;
+    }
+    .header__logo:hover {
+        filter: brightness(0.7); /* Reducir el brillo de la imagen al 80% */
     }
     .header__navbar {
         font-family: "montserrat";
             a {
                 margin-right: 2rem;
                 margin-left: 2rem;
+                transition: transform 0.2s ease, font-weight 0.2s ease;
+            }
+            a:hover {
+                font-weight: bold; /* Cambiar el peso de la fuente a negrita */
+                transform: translateY(-2px); /* Desplazar el enlace 2px hacia arriba cuando se pasa el mouse */
             }
     }
     .header__carrito {
         img {
-            height: 7rem;
+            height: 5rem;
             width: auto;
             margin: 2rem;
+            transition: filter 0.2s ease;
+        }
+        img:hover {
+            filter: brightness(0.8); /* Reducir el brillo de la imagen al 80% */
         }
     }
 }
