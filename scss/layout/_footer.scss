@@ -1,0 +1,35 @@
+@import '../base/typography';
+
+footer {
+    height: 50rem;
+    .footer__logo {
+        height: 10rem;
+        width: auto;
+        margin: 5rem auto;
+        display: flex;
+    }
+    .footer__navbar {
+        font-family: "montserrat";
+        display: flex;
+        margin: 5rem;
+        justify-content: center;
+            a {
+                margin-right: 5rem;
+                margin-left: 5rem;
+                transition: font-weight 0.2s ease;
+            }
+            a:hover {
+                font-weight: bold; /* Cambiar el peso de la fuente a negrita */
+            }
+    }
+    .derechos {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin: 0 40rem;
+        font-family: "Lato";
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+}

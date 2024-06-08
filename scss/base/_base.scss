@@ -29,3 +29,10 @@ a { /* Para sacar el subrayado de los enlaces*/
     text-decoration: none;
     color: inherit;
 }
+
+.linea-gris {
+    width: 90%;
+    height: 1px;
+    background-color: rgba($color: #4b4b4b, $alpha: 0.4);
+    margin: 0 auto;
+}
