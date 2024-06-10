@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
@@ -463,6 +464,50 @@ footer .derechos a:hover {
 }
 .reasons .reasons__articles .reasons__article h3 {
   font-size: 2rem;
+}
+
+#iphone-selector {
+  display: flex;
+  flex-direction: column;
+  margin: 10rem 20rem;
+  font-family: "lato";
+}
+#iphone-selector h2 {
+  text-align: center;
+}
+#iphone-selector .seccion-cuotas, #iphone-selector .seccion-modelo {
+  margin: 1.5rem auto;
+}
+#iphone-selector .seccion-cuotas select, #iphone-selector .seccion-modelo select {
+  appearance: none;
+  -webkit-appearance: none; /* Safari */
+  -moz-appearance: none; /* Firefox */
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 5px;
+  width: 30rem;
+}
+#iphone-selector button {
+  margin: 3rem auto;
+  background-color: #3498db;
+  border: none;
+  color: white;
+  padding: 1.5rem 3rem;
+  text-align: center;
+  text-decoration: none;
+  width: 30rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+#iphone-selector button:hover {
+  background-color: #2980b9; /* Color de fondo al pasar el ratón */
+  transform: scale(1.01); /* Agrandar ligeramente */
+}
+#iphone-selector button:active {
+  background-color: #1c5985; /* Color de fondo al hacer clic */
+  transform: scale(0.99); /* Encoger ligeramente */
 }
 
 /*# sourceMappingURL=main.css.map */
