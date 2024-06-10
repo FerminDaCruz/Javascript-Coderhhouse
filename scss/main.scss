@@ -61,7 +61,7 @@
 #iphone-selector {
     display: flex;
     flex-direction: column;
-    margin: 10rem 20rem ;
+    margin: 4rem 20rem ;
     font-family: "lato";
     h2 {
         text-align: center;
@@ -100,5 +100,12 @@
             background-color: #1c5985; /* Color de fondo al hacer clic */
             transform: scale(0.99); /* Encoger ligeramente */
         }
+    }
+    #resultado {
+        text-align: center;
+        margin: 5rem auto;
+        padding: 1.5rem;
+        border: 1px solid #ccc;
+        display: inline-block;
     }
 }
