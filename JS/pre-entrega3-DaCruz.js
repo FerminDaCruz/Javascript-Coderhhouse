@@ -23,8 +23,8 @@ class Iphone {
     }
 }
 
-const modelos = ["iphone_8", "iphone_x", "iphone_11", "iphone_12", "iphone_13"];
-const precios = [100000, 250000, 300000, 400000, 500000];
+const modelos = ["iphone_8", "iphone_x", "iphone_11", "iphone_12", "iphone_13", "iphone_14", "iphone_15"];
+const precios = [250, 350, 500, 600, 700, 800, 900];
 
 const iPhones = modelos.map((modelo, index) => new Iphone(modelo, precios[index]));
 
@@ -63,3 +63,20 @@ let calcular = function() {
 
 let botonCalcular = document.getElementById('boton-calcular');
 botonCalcular.addEventListener('click', calcular);
+
+
+function login(){
+    const USUARIO = document.getElementById('usuario').value;
+    const PASSWORD = document.getElementById('password').value;
+
+    if (USUARIO && PASSWORD) {
+        localStorage.setItem('usuario', USUARIO);
+        localStorage.setItem('password', PASSWORD);
+
+        alert('BIEN');
+        // window.location.href = '../pages/contacto.html';
+    }
+    else {
+        alert('ingrese nombre y contraseña');
+    }
+}

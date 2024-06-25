@@ -1,0 +1,53 @@
+
+#iphone-selector {
+    display: flex;
+    flex-direction: column;
+    margin: 4rem 20rem ;
+    font-family: "lato";
+    h2 {
+        text-align: center;
+    }
+    .seccion-cuotas, .seccion-modelo{
+        margin: 1.5rem auto;
+        select {
+            appearance: none;
+            -webkit-appearance: none; /* Safari */
+            -moz-appearance: none; /* Firefox */
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 1rem;
+            border-radius: 5px;
+            width: 20rem;
+            text-align: center;
+            }
+    }
+    button {
+        margin: 3rem auto;
+        background-color: #3498db; 
+        border: none; 
+        color: white; 
+        padding: 1.5rem 3rem; 
+        text-align: center; 
+        text-decoration: none; 
+        width: 30rem;
+        cursor: pointer; 
+        border-radius: 5px; 
+        transition: background-color 0.3s ease, transform 0.3s ease; 
+        &:hover {
+            background-color: #2980b9; /* Color de fondo al pasar el ratón */
+            transform: scale(1.01); /* Agrandar ligeramente */
+        }
+    
+        &:active {
+            background-color: #1c5985; 
+            transform: scale(0.99); 
+        }
+    }
+    #resultado {
+        text-align: center;
+        margin: 5rem auto;
+        padding: 1.5rem;
+        border: 1px solid #ccc;
+        display: inline-block;
+    }
+}

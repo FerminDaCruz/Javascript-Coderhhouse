@@ -58,11 +58,6 @@
         <div class="seccion-modelo">
             <label for="modelo">Modelo:</label>
             <select id="modelo">
-                <option value="iphone_8">iPhone 8</option>
-                <option value="iphone_x">iPhone x</option>
-                <option value="iphone_11">iPhone 11</option>
-                <option value="iphone_12">iPhone 12</option>
-                <option value="iphone_13">iPhone 13</option>
             </select>
         </div>
         <div class="seccion-cuotas">
@@ -76,6 +71,18 @@
         </div>
         <button id="boton-calcular">Calcular</button>
         <div id="resultado"></div>
+    </section>
+
+    <div class="linea-gris"></div>
+
+    <section class="seccion-formulario">
+        <form>
+            <label for="usuario"></label>
+            <input type="text" id="usuario" name="usuario" placeholder="ingresa tu nombre" required>
+            <label for="password"></label>
+            <input type="password" id="password" name="password" placeholder="ingrese su contraseña" required>
+            <button type="button" onclick="login()">Iniciar Sesion</button>
+        </form>
     </section>
 
 
@@ -99,6 +106,6 @@
         </div>
     </footer>
 
-    <script src="js/pre-entrega3-DaCruz.js"></script>
+    <script src="js/pre-entrega4-DaCruz.js"></script>
 </body>
 </html>

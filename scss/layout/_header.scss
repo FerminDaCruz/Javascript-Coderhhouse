@@ -1,21 +1,22 @@
+@use '../utilities/variables' as v;
 @import '../base/typography';
-@import '../utilities/variables';
+
 
 .header{
-    background-color: $blanco;
+    background-color: v.$blanco;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .header__logo {
+    &__logo {
         height: 7rem;
         width: auto;
         margin: 2rem;
         transition: filter 0.2s ease;
     }
-    .header__logo:hover {
+    &__logo:hover {
         filter: brightness(0.7); /* Reducir el brillo de la imagen al 80% */
     }
-    .header__navbar {
+    &__navbar {
         font-family: "montserrat";
             a {
                 margin-right: 2rem;

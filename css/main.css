@@ -390,24 +390,24 @@ footer .derechos a:hover {
   justify-content: space-between;
   align-items: center;
 }
-.header .header__logo {
+.header__logo {
   height: 7rem;
   width: auto;
   margin: 2rem;
   transition: filter 0.2s ease;
 }
-.header .header__logo:hover {
+.header__logo:hover {
   filter: brightness(0.7); /* Reducir el brillo de la imagen al 80% */
 }
-.header .header__navbar {
+.header__navbar {
   font-family: "montserrat";
 }
-.header .header__navbar a {
+.header__navbar a {
   margin-right: 2rem;
   margin-left: 2rem;
   transition: transform 0.2s ease, font-weight 0.2s ease;
 }
-.header .header__navbar a:hover {
+.header__navbar a:hover {
   font-weight: bold; /* Cambiar el peso de la fuente a negrita */
   transform: translateY(-2px); /* Desplazar el enlace 2px hacia arriba cuando se pasa el mouse */
 }
@@ -441,6 +441,58 @@ footer .derechos a:hover {
   font-family: "montserrat";
 }
 
+#iphone-selector {
+  display: flex;
+  flex-direction: column;
+  margin: 4rem 20rem;
+  font-family: "lato";
+}
+#iphone-selector h2 {
+  text-align: center;
+}
+#iphone-selector .seccion-cuotas, #iphone-selector .seccion-modelo {
+  margin: 1.5rem auto;
+}
+#iphone-selector .seccion-cuotas select, #iphone-selector .seccion-modelo select {
+  appearance: none;
+  -webkit-appearance: none; /* Safari */
+  -moz-appearance: none; /* Firefox */
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 5px;
+  width: 20rem;
+  text-align: center;
+}
+#iphone-selector button {
+  margin: 3rem auto;
+  background-color: #3498db;
+  border: none;
+  color: white;
+  padding: 1.5rem 3rem;
+  text-align: center;
+  text-decoration: none;
+  width: 30rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+#iphone-selector button:hover {
+  background-color: #2980b9; /* Color de fondo al pasar el ratón */
+  transform: scale(1.01); /* Agrandar ligeramente */
+}
+#iphone-selector button:active {
+  background-color: #1c5985;
+  transform: scale(0.99);
+}
+#iphone-selector #resultado {
+  text-align: center;
+  margin: 5rem auto;
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  display: inline-block;
+}
+
 .reasons {
   padding-top: 10rem;
   padding-bottom: 10rem;
@@ -466,29 +518,24 @@ footer .derechos a:hover {
   font-size: 2rem;
 }
 
-#iphone-selector {
+.seccion-formulario form {
   display: flex;
   flex-direction: column;
-  margin: 4rem 20rem;
+  align-items: center;
+  justify-content: center;
+  margin: 10rem 0;
   font-family: "lato";
 }
-#iphone-selector h2 {
+.seccion-formulario form input {
+  all: unset;
+  padding: 2rem 2rem 0 2rem;
+  border-bottom: 1px solid black;
+}
+.seccion-formulario form input::placeholder {
   text-align: center;
+  font-size: 1.75rem;
 }
-#iphone-selector .seccion-cuotas, #iphone-selector .seccion-modelo {
-  margin: 1.5rem auto;
-}
-#iphone-selector .seccion-cuotas select, #iphone-selector .seccion-modelo select {
-  appearance: none;
-  -webkit-appearance: none; /* Safari */
-  -moz-appearance: none; /* Firefox */
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  padding: 1rem;
-  border-radius: 5px;
-  width: 30rem;
-}
-#iphone-selector button {
+.seccion-formulario form button {
   margin: 3rem auto;
   background-color: #3498db;
   border: none;
@@ -496,25 +543,18 @@ footer .derechos a:hover {
   padding: 1.5rem 3rem;
   text-align: center;
   text-decoration: none;
-  width: 30rem;
+  width: 20rem;
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
-#iphone-selector button:hover {
+.seccion-formulario form button:hover {
   background-color: #2980b9; /* Color de fondo al pasar el ratón */
   transform: scale(1.01); /* Agrandar ligeramente */
 }
-#iphone-selector button:active {
-  background-color: #1c5985; /* Color de fondo al hacer clic */
-  transform: scale(0.99); /* Encoger ligeramente */
-}
-#iphone-selector #resultado {
-  text-align: center;
-  margin: 5rem auto;
-  padding: 1.5rem;
-  border: 1px solid #ccc;
-  display: inline-block;
+.seccion-formulario form button:active {
+  background-color: #1c5985;
+  transform: scale(0.99);
 }
 
 /*# sourceMappingURL=main.css.map */
