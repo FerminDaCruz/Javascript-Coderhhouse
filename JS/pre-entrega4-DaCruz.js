@@ -1,4 +1,3 @@
-// JavaScript (script.js)
 class Iphone {
     constructor(modelo, precio) {
         this.modelo = modelo;
@@ -42,13 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const savedModelo = localStorage.getItem('modelo');
             const savedCuotas = localStorage.getItem('cuotas');
 
-            if (savedModelo) {
-                modeloSelect.value = savedModelo;
-            }
 
-            if (savedCuotas) {
-                cuotasSelect.value = savedCuotas;
-            }
+            savedModelo && (modeloSelect.value = savedModelo);
+            savedCuotas && (cuotasSelect.value = savedCuotas);
 
             let calcular = function() {
                 const modeloSeleccionado = modeloSelect.value;
@@ -80,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 localStorage.setItem('modelo', modeloSeleccionado);
                 localStorage.setItem('cuotas', cuotasSeleccionadas);
 
-                resultadoDiv.textContent = resultado;
+                resultadoDiv.textContent = resultado.replace(/_/g, ' '); // Reemplazar "_" con " "
             };
 
             //calcular
@@ -90,12 +85,11 @@ document.addEventListener("DOMContentLoaded", () => {
             modeloSelect.addEventListener('change', () => {
                 localStorage.setItem('modelo', modeloSelect.value);
             });
-
             cuotasSelect.addEventListener('change', () => {
                 localStorage.setItem('cuotas', cuotasSelect.value);
             });
 
-            // Función para cargar opciones de modelos desde el archivo JSON
+            // Cargar modelos desde el JSON
             const cargarOpciones = () => {
                 iPhones.forEach(iphone => {
                     const option = document.createElement('option');
@@ -105,7 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             };
 
-            // Llenar el select con opciones al cargar la página
             cargarOpciones();
         })
         .catch(error => console.error('Error fetching iPhone data:', error));

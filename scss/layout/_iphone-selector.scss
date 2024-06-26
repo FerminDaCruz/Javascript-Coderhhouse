@@ -4,6 +4,7 @@
     flex-direction: column;
     margin: 4rem 20rem ;
     font-family: "lato";
+    overflow-y: auto;
     h2 {
         text-align: center;
     }
@@ -21,6 +22,7 @@
             text-align: center;
             }
     }
+    
     button {
         margin: 3rem auto;
         background-color: #3498db; 

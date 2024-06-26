@@ -446,6 +446,7 @@ footer .derechos a:hover {
   flex-direction: column;
   margin: 4rem 20rem;
   font-family: "lato";
+  overflow-y: auto;
 }
 #iphone-selector h2 {
   text-align: center;

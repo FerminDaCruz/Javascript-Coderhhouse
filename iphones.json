@@ -17,5 +17,6 @@
     { "modelo": "iphone_15", "precio": 1100 },
     { "modelo": "iphone_15_Pro", "precio": 1300 },
     { "modelo": "iphone_15_Pro_Max", "precio": 1500 },
-    { "modelo": "AirPods_pro", "precio": 250}
+    { "modelo": "AirPods_pro", "precio": 250},
+    { "modelo": "pan", "precio": 50}
 ]
