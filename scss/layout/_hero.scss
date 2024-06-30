@@ -1,3 +1,4 @@
+@use '../utilities/variables' as v;
 .hero {
     background-image: url(/assets/images/hero-3.jpg);
     background-repeat: no-repeat;
@@ -9,11 +10,16 @@
         height: 100%;
         background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
         display: flex;
-        .hero__content {
+        .contenido_hero {
             margin: auto auto;
             font-size: 5rem;
-            color: white;
+            background: linear-gradient(to right, v.$negro, v.$gris2);
+            -webkit-background-clip: text;
+            color: transparent;
             font-family: "montserrat";
+            span {
+                color: v.$blanco;
+            }
         }
     }
 }

@@ -1,0 +1,7 @@
+@use '../utilities/variables' as v;
+@use '../utilities/mixins' as m;
+
+#items {
+    margin: 10rem;
+    @include m.grid(4, 5rem);
+}

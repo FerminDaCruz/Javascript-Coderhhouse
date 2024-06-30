@@ -434,11 +434,16 @@ footer .derechos a:hover {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
   display: flex;
 }
-.hero .difuminado .hero__content {
+.hero .difuminado .contenido_hero {
   margin: auto auto;
   font-size: 5rem;
-  color: white;
+  background: linear-gradient(to right, #000, rgb(49, 49, 49));
+  -webkit-background-clip: text;
+  color: transparent;
   font-family: "montserrat";
+}
+.hero .difuminado .contenido_hero span {
+  color: #fff;
 }
 
 #iphone-selector {
@@ -492,6 +497,13 @@ footer .derechos a:hover {
   padding: 1.5rem;
   border: 1px solid #ccc;
   display: inline-block;
+}
+
+#items {
+  margin: 10rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5rem;
 }
 
 .reasons {
