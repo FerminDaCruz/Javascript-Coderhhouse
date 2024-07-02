@@ -38,30 +38,88 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => response.json())
         .then(data => {
             const iPhones = data.map(item => new Iphone(item.modelo, item.precio));
+
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || []; 
             const DOMItems = document.getElementById('items');
             const DOMCarrito = document.getElementById('carrito');
             const DOMTotal = document.getElementById('total');
             const DOMBotonVaciar = document.getElementById('boton-vaciar');
 
-            data.forEach((info) => {
+
+
+
+
+            const renderizarProductos = (info) => {
                 const html = `
-                    <div>
-                        <div>
-                            <img src="${info.imagen}" alt="imagen-producto">
-                            <h3>${info.modelo.replace(/\_/g, ' ')}</h3>
-                            <p>$: ${info.precio}</p>
-                            <button marcador="${info.id}">comprar</button>
-                        </div>
-                    </div>
-                    `;
-                    DOMItems.innerHTML += html;
-            })
+                                <div class="tarjeta-productos">
+                                    <div>
+                                        <img src="${info.imagen}" alt="imagen-producto">
+                                        <h3>${info.modelo.replace(/\_/g, ' ')}</h3>
+                                        <p>$${info.precio}</p>
+                                        <button class="boton-comprar" marcador="${info.id}">comprar</button>
+                                    </div>
+                                </div>
+                                `;
+                DOMItems.innerHTML += html;
+                document.querySelectorAll('.boton-comprar').forEach((boton) => {
+                    boton.addEventListener('click', agregarProductoCarrito)
+                })
+            }
+
+            const agregarProductoCarrito = (evento) => {
+                carrito.push(evento.target.getAttribute('marcador'))
+                localStorage.setItem('carrito', JSON.stringify(carrito))
+                Swal.fire({
+                    title: "agregado al carrito",
+                    text: "el producto fue agregado al carrito",
+                    icon: "success",
+                    width: 400,
+                    timer: 2000,
+                    showConfirmButton: false,
+                    position: 'top-end',
+                    backdrop: false,
+                    customClass: {
+                        title: 'swal2-title',
+                        content: 'swal2-content'
+                    }
+                });
+                renderizarCarrito();
+            }
+
+            function renderizarCarrito () {
+                DOMCarrito.innerHTML = ``; // Para no repetir productos
+                carrito.forEach((id) => {
+                    // busca el ID y coloca el objeto que coincide en producto
+                    const producto = data.find((info) => info.id === parseInt(id)) 
+                    const html = `
+                    <li>
+                        <p>${producto.modelo.replace(/\_/g, ' ')}</p> - <p>$${producto.precio}</p>
+                    </li>`
+                    DOMCarrito.innerHTML += html;
+                })
+                const total = carrito.reduce((total,id) => {
+                    const producto = data.find((info) => info.id === parseInt(id))
+                    return total + producto.precio;
+                },0)
+                DOMTotal.textContent = total.toFixed(2)
+            }
+            const vaciarCarrito = () => {
+                carrito = [];
+                localStorage.removeItem('carrito');
+                renderizarCarrito();
+            }
+            
+            
 
             // Llamos a las funciones
             cargarOpciones(iPhones, modeloSelect);
             cargarSeleccionPrevia(modeloSelect, cuotasSelect);
             configurarEventos(iPhones, modeloSelect, cuotasSelect, resultadoDiv);
-
+            data.forEach((info) => {
+                renderizarProductos(info);
+            });
+            DOMBotonVaciar.addEventListener('click', vaciarCarrito)
+            renderizarCarrito();
         })
 })
 
@@ -123,34 +181,8 @@ const configurarEventos = (iPhones, modeloSelect, cuotasSelect, resultadoDiv) =>
         localStorage.setItem('cuotas', cuotasSelect.value);
     });
 };
-const crearDivProducto = (producto) => { // pasar como parametro los iphones
-    const productoDiv = document.createElement('div');
-    const contenidoProductoDiv = document.createElement('div');
-    const nombreProducto = document.createElement('h3');
-    const precioProducto = document.createElement('p');
-    const botonComprar = document.createElement('button');
-
-    nombreProducto.textContent = producto.modelo;
-    precioProducto.textContent = `$${producto.precio}`;
-    botonComprar.textContent = 'Comprar';
-
-    productoDiv.classList.add('producto');
-    contenidoProductoDiv.classList.add('contenido-producto');
-    botonComprar.classList.add('boton-comprar');
-
-    contenidoProductoDiv.appendChild(nombreProducto);
-    contenidoProductoDiv.appendChild(precioProducto);
-    contenidoProductoDiv.appendChild(botonComprar);
-    productoDiv.appendChild(contenidoProductoDiv);
-
-    return productoDiv;
-};
 
 
 
-
-function renderizarProductos() {
-    
-}
 
 
