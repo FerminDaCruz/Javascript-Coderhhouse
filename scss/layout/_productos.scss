@@ -1,50 +1,67 @@
 @use '../utilities/variables' as v;
 @use '../utilities/mixins' as m;
 
-#items {
-    margin: 10rem;
-    @include m.grid(4, 5rem);
-}
+#productos-contenedor {
+    .titulo-productos {
+        text-align: center;
+        font-family: 'montserrat';
+        font-size: 3.5rem;
+        font-weight: bold;
+        padding-top: 10rem;
+        margin-bottom: 0;
+    }
 
+    #items {
+        margin: 10rem;
+        @include m.grid(auto-fit, minmax(20rem, 1fr)); // Ajuste para columnas responsivas
+    }
+}
 
 .tarjeta-productos {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 2rem;
-    margin: 2rem;
+    margin: 2rem 0;
     border: 1px solid #ddd;
     border-radius: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: v.$blanco;
     transition: transform 0.2s;
+
     &:hover {
         transform: scale(1.05);
     }
+
     & > div {
         text-align: center;
-        width: 30rem;
+        width: 100%; // Ajustado para ser 100% del contenedor
     }
+
     & img {
         width: 100%;
-        height: 40rem;
+        height: 30rem;
         object-fit: cover;
         border-bottom: 1px solid #ddd;
         padding-bottom: 1rem;
         margin-bottom: 1rem;
     }
+
     & h3 {
         font-family: 'montserrat';
         font-size: 1.5em;
         margin: 1rem 0;
         color: #333;
     }
+
     & p {
         font-family: 'roboto';
         font-size: 1.2em;
         color: #27ae60;
         margin: 1rem 0;
     }
+
     & button {
         font-family: 'lato';
         padding: 1rem 2rem;
@@ -55,19 +72,133 @@
         border-radius: 5px;
         cursor: pointer;
         transition: background-color 0.2s;
+
         &:hover {
             background-color: #0056b3;
         }
     }
 }
 
+@include m.telefono {
+    #productos-contenedor {
+        .titulo-productos {
+            font-size: 2.5rem;
+            padding-top: 2rem;
+        }
 
+        #items {
+            margin: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        }
+    }
 
-.swal2-title {
-    font-family: 'roboto', sans-serif;
+    .tarjeta-productos {
+        padding: 0.5rem;
+        margin: 2rem;
+
+        & h3 {
+            font-size: 1rem;
+        }
+
+        & p {
+            font-size: 0.9em;
+        }
+
+        & button {
+            font-size: 1.2rem;
+        }
+    }
 }
 
-.swal2-content {
-    font-family: 'montserrat', sans-serif;
+@include m.tablet {
+    #productos-contenedor {
+        .titulo-productos {
+            font-size: 3rem;
+            padding-top: 5rem;
+        }
+
+        #items {
+            margin: 5rem;
+            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); // Ajuste para pantallas medianas
+        }
+    }
+
+    .tarjeta-productos {
+        padding: 1rem;
+        margin: 1rem;
+
+        & h3 {
+            font-size: 1.2em;
+        }
+
+        & p {
+            font-size: 1em;
+        }
+
+        & button {
+            font-size: 1.5rem;
+        }
+    }
 }
 
+@include m.desktop {
+    #productos-contenedor {
+        .titulo-productos {
+            font-size: 3.5rem;
+            padding-top: 10rem;
+        }
+
+        #items {
+            margin: 10rem;
+            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); // Ajuste para pantallas grandes
+        }
+    }
+
+    .tarjeta-productos {
+        padding: 2rem;
+        margin: 2rem;
+
+        & h3 {
+            font-size: 1.5em;
+        }
+
+        & p {
+            font-size: 1.2em;
+        }
+
+        & button {
+            font-size: 2rem;
+        }
+    }
+}
+
+@include m.desktopXL {
+    #productos-contenedor {
+        .titulo-productos {
+            font-size: 4rem;
+            padding-top: 12rem;
+        }
+
+        #items {
+            margin: 12rem;
+            grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); // Ajuste para pantallas extra grandes
+        }
+    }
+
+    .tarjeta-productos {
+        padding: 3rem;
+        margin: 3rem;
+
+        & h3 {
+            font-size: 1.8em;
+        }
+
+        & p {
+            font-size: 1.4em;
+        }
+
+        & button {
+            font-size: 2.2rem;
+        }
+    }
+}

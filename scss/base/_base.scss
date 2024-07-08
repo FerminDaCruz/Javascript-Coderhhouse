@@ -16,12 +16,12 @@ body{
 // Globales
 
 .contenedor {
-    padding: 1.5rem 1.5rem;
+    margin: 1.5rem 1.5rem;
     @media (min-width: 768px) {
-    padding: 1.5rem 3rem;
+    margin: 1.5rem 3rem;
     }
     @media (min-width: 900px) {
-        padding: 1.5rem 6rem;
+        margin: 1.5rem 6rem;
     }
 }
 

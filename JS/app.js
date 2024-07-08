@@ -35,6 +35,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const productosContainer = document.getElementById('productos-container');
     const iphonesJSON = 'iphones.json'
     
+    const scrollNavegacion = (selector) => {
+        document.querySelectorAll(selector).forEach(link => {
+            link.addEventListener('click', evento => {
+                evento.preventDefault();
+    
+                const targetId = link.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+    
+                if (targetElement) {
+                    window.scrollTo ({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    })
+                }
+            })
+        })
+    }
+
+    scrollNavegacion('.header__navbar a')
+    scrollNavegacion('.footer__navbar a')
+    
     fetch(iphonesJSON)
         .then(response => response.json())
         .then(data => {
@@ -171,9 +192,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             // Llamar a las funciones
-            cargarOpciones(iPhones, modeloSelect);
-            cargarSeleccionPrevia(modeloSelect, cuotasSelect);
-            configurarEventos(iPhones, modeloSelect, cuotasSelect, resultadoDiv);
             data.forEach((info) => {
                 renderizarProductos(info);
             });
@@ -185,63 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 });
 // Funciones
-const cargarOpciones = (iPhones, modeloSelect) => {
-    iPhones.forEach(iphone => {
-        const option = document.createElement('option');
-        option.value = iphone.modelo;
-        option.textContent = iphone.modelo.replace(/\_/g, ' '); // Reemplazar "_" con " "
-        modeloSelect.appendChild(option);
-    });
-};
-const cargarSeleccionPrevia = (modeloSelect, cuotasSelect) => {
-    const modeloGuardado = localStorage.getItem('modelo');
-    const cuotasGuardadas = localStorage.getItem('cuotas');
-    modeloGuardado && (modeloSelect.value = modeloGuardado);
-    cuotasGuardadas && (cuotasSelect.value = cuotasGuardadas);
-};
-const calcularResultado = (iPhones, modeloSelect, cuotasSelect, resultadoDiv) => {
-    const modeloSeleccionado = modeloSelect.value;
-    const cuotasSeleccionadas = cuotasSelect.value;
-    const iphoneSeleccionado = iPhones.find(iphone => iphone.modelo === modeloSeleccionado);
 
-    let resultado;
-    switch (cuotasSeleccionadas) {
-        case '1':
-            resultado = iphoneSeleccionado.cuotas1();
-            break;
-        case '3':
-            resultado = iphoneSeleccionado.cuotas3();
-            break;
-        case '6':
-            resultado = iphoneSeleccionado.cuotas6();
-            break;
-        case '12':
-            resultado = iphoneSeleccionado.cuotas12();
-            break;
-        default:
-            resultado = "Por favor, seleccione un número válido de cuotas.";
-            break;
-    }
-
-    // Guardar en localStorage
-    localStorage.setItem('modelo', modeloSeleccionado);
-    localStorage.setItem('cuotas', cuotasSeleccionadas);
-
-    resultadoDiv.textContent = resultado.replace(/\_/g, ' '); // Reemplazar "\_" con " "
-};
-const configurarEventos = (iPhones, modeloSelect, cuotasSelect, resultadoDiv) => {
-    const botonCalcular = document.getElementById('boton-calcular')
-
-    botonCalcular.addEventListener('click', () => {
-        calcularResultado(iPhones, modeloSelect, cuotasSelect, resultadoDiv);
-    });
-    modeloSelect.addEventListener('change', () => {
-        localStorage.setItem('modelo', modeloSelect.value);
-    });
-    cuotasSelect.addEventListener('change', () => {
-        localStorage.setItem('cuotas', cuotasSelect.value);
-    });
-};
 
 
 

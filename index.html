@@ -12,19 +12,21 @@
     <link rel="stylesheet" href="css/main.css"/>
 </head>
 <body>
-    <header class="header">
+    <header id="header" class="header">
         <a href="index.html"><img class="header__logo"  src="assets/images/logo-apple.png"></a>
         <div class="header__navbar">
-            <a href="index.html">inicio</a>
-            <a href="pages/productos.html">productos</a>
-            <a href="pages/contacto.html">contacto</a>
+            <a href="#header">inicio</a>
+            <a href="#productos-contenedor">productos</a>
+            <a href="#footer">contacto</a>
         </div>
         <a class="header__carrito" href="#"><img src="assets/images/carrito-logo-2.png"></a>
     </header>
 
     <section class="hero">
         <div class="difuminado">
-            <h1 class="contenido_hero">Piensa en grande. Piensa en <span>Apple.</span></h1>
+            <div class="contenedor_hero">
+                <h1 class="contenido_hero">Piensa en grande. Piensa en <span>Apple.</span></h1>
+            </div>
         </div>
     </section>
 
@@ -52,7 +54,7 @@
 
     <div class="linea-gris"></div>
 
-    <section id="iphone-selector">
+    <!-- <section id="iphone-selector">
         <h2>Seleccione su iPhone:</h2>
 
         <div class="seccion-modelo">
@@ -71,9 +73,10 @@
         </div>
         <button id="boton-calcular">Calcular</button>
         <div id="resultado"></div>
-    </section>
+    </section> -->
 
     <section id="productos-contenedor">
+        <h2 class="titulo-productos">Nuestros Productos</h2>
         <div id="items">
 
         </div>
@@ -93,14 +96,14 @@
     <div class="linea-gris"></div>
 
 
-    <footer>
+    <footer id="footer">
         <div class="linea-gris"></div>
         <img src="assets/images/logo-apple.png" class="footer__logo">
         <div class="linea-gris"></div>
         <div class="footer__navbar">
-            <a href="index.html">inicio</a>
-            <a href="pages/productos.html">productos</a>
-            <a href="pages/contacto.html">contacto</a>
+            <a href="#header">inicio</a>
+            <a href="#productos-contenedor">productos</a>
+            <a href="#footer">contacto</a>
         </div>
         <div class="derechos">
             <p>Copyright © 2024 Apple Inc. Todos los derechos reservados.</p>
@@ -114,6 +117,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="js/pre-entrega5-DaCruz.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

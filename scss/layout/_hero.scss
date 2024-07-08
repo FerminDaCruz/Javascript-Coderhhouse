@@ -1,24 +1,41 @@
 @use '../utilities/variables' as v;
+@use '../utilities/mixins' as m;
+
 .hero {
     background-image: url(/assets/images/hero-3.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     width: auto;
-    height: 120rem;
+    height: 60rem;
+    @include m.tablet {
+        height: 100rem;
+    }
     .difuminado {
         width: 100%;
         height: 100%;
         background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
         display: flex;
-        .contenido_hero {
-            margin: auto auto;
-            font-size: 5rem;
-            background: linear-gradient(to right, v.$negro, v.$gris2);
-            -webkit-background-clip: text;
-            color: transparent;
-            font-family: "montserrat";
-            span {
-                color: v.$blanco;
+        .contenedor_hero {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            .contenido_hero {
+                text-align: center;
+                margin: 5rem;
+                font-size: 3rem;
+                background: linear-gradient(to right, v.$gris2, v.$negro);
+                -webkit-background-clip: text;
+                color: transparent;
+                font-family: "montserrat";
+                @include m.telefono {
+                    font-size: 5rem;
+                }
+                span {
+                    color: v.$blanco;
+                }
             }
         }
     }

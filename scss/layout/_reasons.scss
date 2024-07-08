@@ -1,19 +1,26 @@
+@use '../utilities/mixins' as m;
 
 .reasons {
     padding-top: 10rem;
     padding-bottom: 10rem;
-    .reasons__title {
+    &__title {
         font-family: "Lato";
         text-align: center;
         padding-bottom: 5rem;
         font-size: 3rem;
 
     }
-    .reasons__articles {
+    &__articles {
         font-family: "Lato";
-        display: flex;
-        padding-left: 10rem;
-        padding-right: 10rem;
+        @include m.grid(1);
+        padding-left: 7.5rem;
+        padding-right: 7.5rem;
+        @include m.tablet {
+            @include m.grid(2, 5rem);
+        }
+        @include m.desktop {
+            display: flex;
+        }
         .reasons__article{
             padding-left: 5rem;
             padding-right: 5rem;
